@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
 html {
 	font-size: 62.5%;
 	font-family: 'Roboto', sans-serif;
@@ -64,35 +68,107 @@ p {
 /* ### Header/NavBar Section ### */
 
 #sidebar-nav {
-    width: 100%;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8e69e;
+	position: fixed;
+	top:0;
+	right : 0;
+	z-index: 10;
+	background-color: #f8e69e;
+	width:88px;
+	min-height: 100%;
+	padding: 10px 14px;
+
+	border-left: solid 4px #192b3d;
 }
 
-#sidebar-nav h2 {
-    font-size: 5rem;
-    color: #192b3d;
-    margin: 8px 30px;
+#sidebar-nav #logo .logo-title {
+	font-size: 3.8rem;
+
+	display:flex;
+	justify-content: flex-end;
+
+	margin:20px 5px;
+	color:#192b3d;
 }
 
-#sidebar-nav .nav-bar .nav-links {
-    display: flex;
-    font-size: 3rem;
-    margin: 0px 30px;
+#toggle {
+	position: fixed;
+	top:10%;
+	left: 6%;
+	z-index:10;
+	height:45px;
+	width:45px;
+	display:flex;
+
+	border: none;
+	align-items:center;
+	justify-content: center;
+	transform: translateY(-50%);
+
+	font-size:22px;
+	cursor: pointer;
+
+	background-color: #192b3d;
+	color:#f8e69e;
+	border-radius:100%;
+
+	transition: .5s;
 }
 
-#sidebar-nav .nav-bar .nav-links li {
-    padding: 0px 15px;
+#sidebar-nav li {
+	width : 100%;
+	height:80px;
+	margin-top:60px;
 }
-#sidebar-nav .nav-bar .nav-links li a {
-    color: #192b3d;
+
+#sidebar-nav i {
+	min-width:60px;
+	height:100%;
+	font-size:3 rem;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 6px;
 }
 
+#sidebar-nav .nav-text,
+#sideebar-nav i {
+	color:#192b3d;
+	transition: .3s;
+}
 
+#sidebar-nav .nav-text {
+	font-size:2.5rem;
+	width:100%;
+	font-weight:500;
+	white-space: nowrap;
+	margin-right: 55px;
+}
 
+#sidebar-nav li a {
+	display:flex;
+	align-items: center;
+	justify-content: flex-end;
+	transition: .3s;
+	height:100%;
+	width:100%;
+}
+
+#sidebar-nav li a:hover {
+	background-color: #192b3d;
+}
+
+#sidebar-nav li a:hover i,
+#sidebar-nav li a:hover .text{
+	color:#f8e69e;
+}
+
+#sidebar-nav .nav-bar {
+	overflow-y: scroll;
+}
+
+.nav-bar::-webkit-scrollbar {
+	display: none;
+}
 
 /* End Header section */
 
